@@ -4,18 +4,20 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose';
 import bookRoute from './route/bookRoute.js'
 import userRoute from './route/userRoutes.js'
+import bodyParser from 'body-parser'
 import cors from "cors"
 const app = express()
 
 app.use(cors())
-app.use(express.json());
+app.use(bodyParser.json())
+// app.use(express.json());
 
 
 dotenv.config();
 const PORT=4001;
 
 // Connect to mongodb
-const mongoDBURL="mongodb://localhost:27017/bookstore";
+const mongoDBURL="mongodb+srv://Ayush:Ayush%40123@cluster0.rbuxq.mongodb.net/Bookstore";
 try {
   mongoose.connect(mongoDBURL,{
     // useNewUrlParser: true,
